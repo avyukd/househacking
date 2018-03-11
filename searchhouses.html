@@ -1,0 +1,24 @@
+<html>
+<link rel="stylesheet" type="text/css" href="login_styling.css"/>
+<script type="text/javascript">
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function(){
+  if(xmlhttp.status==200 && xmlhttp.readyState==4){    
+    var words = xmlhttp.responseText.split('\n');
+  }
+}
+xmlhttp.open("GET","housingdata.txt",true);
+xmlhttp.send();
+</script>
+<body>
+<div id="searchBar">
+<a href= "">Sell home</a>
+<form>
+<label>Search all:</label><input type="search" value=""></input><br>
+<label>Filter by location: </label><input type="search" value=""></input><br>
+<label>Filter by size: </label><input type="search" value=""></input><br>
+<label>Filter by price: </label><input type="search" value=""></input><br>
+<input id="button" type="submit" value="Search"/>
+</form>
+</body>
+</html>
