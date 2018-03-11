@@ -5,7 +5,6 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function(){
   if(xmlhttp.status==200 && xmlhttp.readyState==4){    
     var words = xmlhttp.responseText.split('\n');
-	alert(words)
   }
 }
 xmlhttp.open("GET","https://avyukd.github.io/househacking/housingdata.txt",true);
@@ -25,9 +24,11 @@ function parse(){
 		}
 		i++;
 	}
-	for(var i = 0; i < 11; i++){
-	document.getElementById(String(i)).href = 'https://avyukd.github.io/househacking/housepage/'+String(i);
-	document.getElementById(String(i)).innerHTML = document.getElementById(String(i)).href;}
+	var k = 0;
+	for(r in results){
+	document.getElementById(String(k)).href = 'https://avyukd.github.io/househacking/housepage/'+results.findIndex(r);
+	document.getElementById(String(k)).innerHTML = r;
+	k++;}
 	
 }
 </script>
