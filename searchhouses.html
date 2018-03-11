@@ -4,12 +4,12 @@
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function(){
   if(xmlhttp.status==200 && xmlhttp.readyState==4){    
-    var words = xmlhttp.responseText.split(' ');
+    var words = xmlhttp.responseText.split('\n');
 	alert(words[0]);
 	document.getElementById("work").innerHTML= words[0];
   }
 }
-xmlhttp.open("GET","housingdata.txt",true);
+xmlhttp.open("GET","https://avyukd.github.io/househacking/housingdata.txt",true);
 xmlhttp.send();
 </script>
 <body>
