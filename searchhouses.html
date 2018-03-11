@@ -4,8 +4,9 @@
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function(){
   if(xmlhttp.status==200 && xmlhttp.readyState==4){    
-    var words = xmlhttp.responseText.split('\n');
+    var words = xmlhttp.responseText.split(' ');
 	alert(words[0]);
+	document.getElementById("work").innerHTML= words[0];
   }
 }
 xmlhttp.open("GET","housingdata.txt",true);
@@ -15,7 +16,8 @@ xmlhttp.send();
 <div id="searchBar">
 <a href= "">Sell home</a>
 <form>
-<label>{{words}} Search all:</label><input type="search" value=""></input><br>
+<span id="work"></span>
+<label>Search all:</label><input type="search" value=""></input><br>
 <label>Filter by location: </label><input type="search" value=""></input><br>
 <label>Filter by size: </label><input type="search" value=""></input><br>
 <label>Filter by price: </label><input type="search" value=""></input><br>
