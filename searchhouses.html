@@ -5,23 +5,32 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function(){
   if(xmlhttp.status==200 && xmlhttp.readyState==4){    
     var words = xmlhttp.responseText.split('\n');
-	alert(words[0]);
-	document.getElementById("work").innerHTML= words[0];
+	alert(words)
   }
 }
 xmlhttp.open("GET","https://avyukd.github.io/househacking/housingdata.txt",true);
 xmlhttp.send();
+</script>
+<script type="text/javascript">
+function parse(){
+	var general = document.getElementById(gen);
+	var location = document.getElementById(loc);
+	var size = document.getElementById(siz);
+	var price = document.getElementById(pri);
+	
+	
+}
 </script>
 <body>
 <div id="searchBar">
 <a href= "">Sell home</a>
 <form>
 <span id="work"></span>
-<label>Search all:</label><input type="search" value=""></input><br>
-<label>Filter by location: </label><input type="search" value=""></input><br>
-<label>Filter by size: </label><input type="search" value=""></input><br>
-<label>Filter by price: </label><input type="search" value=""></input><br>
-<input id="button" type="submit" value="Search"/>
+<label>Search all:</label><input id="gen" type="search" value=""></input><br>
+<label>Filter by location: </label><input id="loc" type="search" value=""></input><br>
+<label>Filter by size: </label><input id="siz" type="search" value=""></input><br>
+<label>Filter by price: </label><input id="pri" type="search" value=""></input><br>
+<input id="button" type="submit" value="Search" onClick="parse()"/>
 </form>
 </body>
 </html>
